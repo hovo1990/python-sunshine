@@ -10,6 +10,9 @@ conda activate sunshine
 conda install -c conda-forge opencv
 
 conda install -c conda-forge uvloop
+conda install scipy
+
+conda install -c conda-forge python-sounddevice
 
 
 # For video capturing
