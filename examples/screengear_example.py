@@ -3,7 +3,11 @@ from vidgear.gears import ScreenGear
 import cv2
 
 # open video stream with default parameters
-stream = ScreenGear().start()
+# stream = ScreenGear().start()
+
+# different monitor
+stream = ScreenGear(monitor=2).start()
+
 
 # loop over
 while True:
