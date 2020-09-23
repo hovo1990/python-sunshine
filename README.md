@@ -11,5 +11,9 @@ conda install -c conda-forge opencv
 
 conda install -c conda-forge uvloop
 
+
+# For video capturing
 pip install uvloop
 pip install vidgear[asyncio] # can be troublesome for ZSH
+
+# for audio
