@@ -22,3 +22,8 @@ pip install vidgear[asyncio] # can be troublesome for ZSH
 # for audio
 
 conda env export --name sunshine > python-sunshine.yml
+
+conda env create -f python-sunshine.yml
+
+#update base conda
+conda update -n base -c defaults conda

@@ -13,7 +13,12 @@ stream = ScreenGear(monitor=1).start()
 options = {'compression_format': '.jpg', 'compression_param':[cv2.IMWRITE_JPEG_QUALITY, 50]}
 
 #Define NetGear Server with defined parameters
-server = NetGear(pattern = 1, logging = True, **options)
+# server = NetGear(pattern = 1, logging = True, **options)
+
+
+# Define Netgear Client at given IP address and define parameters (!!! change following IP address '192.168.x.xxx' with yours !!!)
+# server = NetGear(address = '192.168.88.248', port = '48000', protocol = 'udp',  pattern = 1, logging = True, **options)
+server = NetGear(address = '192.168.88.221', port = '48000', protocol = 'udp',  pattern = 1, logging = True, **options)
 
 # loop over until KeyBoard Interrupted
 while True:
