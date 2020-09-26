@@ -7,7 +7,7 @@ import cv2
 # client = NetGear(receive_mode = True)
 
 # define various tweak flags
-options = {'flag' : 0, 'copy' : False, 'track' : False}
+options = {'flag' : 0, 'copy' : False, 'track' : False,'smoothing_radius':100}
 #
 # # Define Netgear Client at given IP address and define parameters (!!! change following IP address '192.168.x.xxx' with yours !!!)
 client = NetGear(address = '192.168.88.221', port = '48000', protocol = 'udp',  pattern = 1, receive_mode = True, logging = True, **options)
