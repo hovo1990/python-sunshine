@@ -20,3 +20,5 @@ pip install uvloop
 pip install vidgear[asyncio] # can be troublesome for ZSH
 
 # for audio
+
+conda env export --name sunshine > python-sunshine.yml
