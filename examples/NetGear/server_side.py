@@ -1,10 +1,13 @@
 # import required libraries
 from vidgear.gears import VideoGear
 from vidgear.gears import NetGear
+from vidgear.gears import ScreenGear
 import cv2
 
 # open any valid video stream(for e.g `test.mp4` file)
-stream = VideoGear(source='test.mp4').start()
+# stream = VideoGear(source='test.mp4').start()
+
+stream = ScreenGear(monitor=2).start()
 
 # activate jpeg encoding and specify other related parameters
 options = {'compression_format': '.jpg', 'compression_param':[cv2.IMWRITE_JPEG_QUALITY, 50]}
