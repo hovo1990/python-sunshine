@@ -25,10 +25,21 @@ from vidgear.gears.asyncio import NetGear_Async
 from vidgear.gears import ScreenGear
 import asyncio
 
-stream = ScreenGear(monitor=1).start()
+# stream = ScreenGear(monitor=1).start()
 
 #initialize Server with suitable source and enable stabilization
-server=NetGear_Async(source=stream, stabilize=True, address='192.168.88.221', port = '48000', protocol = 'udp', pattern=2, logging=True).launch()
+# server=NetGear_Async( address='192.168.88.221', port = '48000', protocol = 'udp', pattern=2, logging=True)
+
+from vidgear.gears.asyncio import NetGear_Async
+import cv2, asyncio
+
+# import libraries
+from vidgear.gears.asyncio import NetGear_Async
+import asyncio
+
+#initialize Server with suitable source and enable stabilization
+stream = ScreenGear(monitor=1).start()
+server=NetGear_Async(source=stream, stabilize=True, logging=True).launch()
 
 if __name__ == '__main__':
     #set event loop

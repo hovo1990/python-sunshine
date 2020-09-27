@@ -26,8 +26,8 @@ import cv2, asyncio
 
 #define and launch Client with `receive_mode=True`
 client=NetGear_Async(address = '192.168.88.221', port = '48000', protocol = 'udp', receive_mode = True, logging = True).launch()
-#Define writer with output filename 'Output.mp4'
-writer=WriteGear(output_filename='Output.mp4', logging=True)
+
+
 
 
 #Create a async function where you want to show/manipulate your received frames
@@ -38,16 +38,13 @@ async def main():
 
         # do something with received frames here
 
-        # write a modified frame to writer
-        #writer.write(frame)
-
 
         # Show output window
         cv2.imshow("Output Frame", frame)
         key=cv2.waitKey(1) & 0xFF
 
         #await before continuing
-        await asyncio.sleep(0.00001)
+        await asyncio.sleep(0.01)
 
 
 if __name__ == '__main__':
@@ -64,5 +61,3 @@ if __name__ == '__main__':
     cv2.destroyAllWindows()
     # safely close client
     client.close()
-    # safely close writer
-    #writer.close()

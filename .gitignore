@@ -133,6 +133,10 @@ pip-selfcheck.json
 ## File-based project format:
 *.iws
 
+## video files
+*.mp4
+
+
 ## Plugin-specific files:
 
 # IntelliJ
