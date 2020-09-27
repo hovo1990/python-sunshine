@@ -1,11 +1,13 @@
 # import required libraries
 from vidgear.gears import ScreenGear
 import cv2
+from numba import jit
 
 # open video stream with default parameters
 # stream = ScreenGear().start()
 
 # different monitor
+#@jit(nopython=True) # Set "nopython" mode for best performance, equivalent to @njit
 stream = ScreenGear(monitor=2).start()
 
 
