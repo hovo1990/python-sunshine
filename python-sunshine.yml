@@ -116,6 +116,9 @@ dependencies:
     - mss==6.0.0
     - multidict==4.7.6
     - pafy==0.5.5
+    - pillow==7.2.0
+    - pyqt5==5.15.1
+    - pyqt5-sip==12.8.1
     - pyzmq==19.0.2
     - requests==2.24.0
     - soundcard==0.4.0
