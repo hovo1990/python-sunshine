@@ -43,3 +43,6 @@ Suggested configs are:
 python main_server.py 5540
 python main_client.py movie.mjpeg localhost 5540 5541
 ```
+
+python main_server.py 48001
+python main_client.py movie.mjpeg localhost 48001 48002
