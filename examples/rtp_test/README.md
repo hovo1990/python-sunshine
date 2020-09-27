@@ -46,3 +46,8 @@ python main_client.py movie.mjpeg localhost 5540 5541
 
 python main_server.py 48001
 python main_client.py movie.mjpeg localhost 48001 48002
+
+
+# remote comp
+python main_server.py 48001
+python main_client.py movie.mjpeg 192.168.88.248 48001 48002

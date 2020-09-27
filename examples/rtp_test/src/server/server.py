@@ -12,7 +12,8 @@ class Server:
     FRAME_PERIOD = 1000//VideoStream.DEFAULT_FPS  # in milliseconds
     SESSION_ID = '123456'
 
-    DEFAULT_HOST = '127.0.0.1'
+    # DEFAULT_HOST = '127.0.0.1'
+    DEFAULT_HOST = '192.168.88.248'
     DEFAULT_CHUNK_SIZE = 4096
 
     # for allowing simulated non-blocking operations

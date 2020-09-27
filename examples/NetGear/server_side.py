@@ -2,7 +2,7 @@
 # import required libraries
 from vidgear.gears import VideoGear
 from vidgear.gears import NetGear
-
+from vidgear.gears.stabilizer import Stabilizer
 from vidgear.gears import ScreenGear
 import cv2
 
@@ -21,6 +21,8 @@ options = {'compression_format': '.jpg', 'compression_param':[cv2.IMWRITE_JPEG_Q
 # Define Netgear Client at given IP address and define parameters (!!! change following IP address '192.168.x.xxx' with yours !!!)
 # server = NetGear(address = '192.168.88.248', port = '48000', protocol = 'udp',  pattern = 1, logging = True, **options)
 server = NetGear(address = '192.168.88.221', port = '48000', protocol = 'udp',  pattern = 1, logging = True, **options)
+stab = Stabilizer()
+
 
 # loop over until KeyBoard Interrupted
 while True:
@@ -35,9 +37,16 @@ while True:
         break
 
     # {do something with the frame here}
+    # send current frame to stabilizer for processing
+    stabilized_frame = stab.stabilize(frame)
 
-    # send frame to server
-    server.send(frame)
+    # wait for stabilizer which still be initializing
+    if stabilized_frame is None:
+         continue
+
+         # send frame to server
+    # server.send(frame)
+    server.send(stabilized_frame)
 
   except KeyboardInterrupt:
     break
